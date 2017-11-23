@@ -8,10 +8,16 @@
 
 #import "ShoppingCartViewController.h"
 #import "GoodsCell.h"
+#import "SearchResultViewController.h"
+
+
+#define Later_iOS(v) ([[[UIDevice currentDevice] systemVersion] floatValue] >= v)
+
 
 @interface ShoppingCartViewController () <GoodsCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *addBBI;
+@property (nonatomic, strong) UISearchController *searchController;
 
 @end
 
@@ -20,11 +26,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = self.searchController;
+        self.navigationItem.hidesSearchBarWhenScrolling = NO;
+    } else {
+        [self.searchController.searchBar sizeToFit];
+        self.tableView.tableHeaderView = self.searchController.searchBar;
+    }
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.definesPresentationContext = YES;
 }
 
 #pragma mark - Event Handlers
@@ -52,14 +62,22 @@
     return 1;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 80;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     GoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsCell" forIndexPath:indexPath];
     return cell;
+}
+
+
+#pragma mark - Getter
+
+- (UISearchController *)searchController {
+    if (_searchController == nil) {
+        UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SearchResultViewController *searchResultVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"SearchResultViewController"];
+        _searchController = [[UISearchController alloc] initWithSearchResultsController:searchResultVC];
+    }
+    return _searchController;
 }
 
 @end

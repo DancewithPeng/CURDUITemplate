@@ -18,6 +18,7 @@
 		6E0AD8781FC552BB00DD39F7 /* CommentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AD8771FC552BB00DD39F7 /* CommentListViewController.m */; };
 		6E0AD87D1FC5538600DD39F7 /* GoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AD87C1FC5538600DD39F7 /* GoodsCell.m */; };
 		6E0AD8801FC5539300DD39F7 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AD87F1FC5539300DD39F7 /* CommentCell.m */; };
+		6E3ED6B01FC6735F00C27A2D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		6E0AD87C1FC5538600DD39F7 /* GoodsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GoodsCell.m; sourceTree = "<group>"; };
 		6E0AD87E1FC5539300DD39F7 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		6E0AD87F1FC5539300DD39F7 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
+		6E3ED6AE1FC6735F00C27A2D /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				6E0AD8741FC54A3200DD39F7 /* ShoppingCartViewController.m */,
 				6E0AD8761FC552BB00DD39F7 /* CommentListViewController.h */,
 				6E0AD8771FC552BB00DD39F7 /* CommentListViewController.m */,
+				6E3ED6AE1FC6735F00C27A2D /* SearchResultViewController.h */,
+				6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */,
 				6E0AD8471FC5457B00DD39F7 /* Main.storyboard */,
 				6E0AD87A1FC5536500DD39F7 /* Cells */,
 				6E0AD8791FC5535A00DD39F7 /* Resources */,
@@ -300,6 +305,7 @@
 				6E0AD8801FC5539300DD39F7 /* CommentCell.m in Sources */,
 				6E0AD8781FC552BB00DD39F7 /* CommentListViewController.m in Sources */,
 				6E0AD8751FC54A3200DD39F7 /* ShoppingCartViewController.m in Sources */,
+				6E3ED6B01FC6735F00C27A2D /* SearchResultViewController.m in Sources */,
 				6E0AD8511FC5457B00DD39F7 /* main.m in Sources */,
 				6E0AD8431FC5457B00DD39F7 /* AppDelegate.m in Sources */,
 			);
@@ -468,6 +474,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES_THIN;
 				PRODUCT_BUNDLE_IDENTIFIER = DP.CURDUITemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,6 +489,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LLVM_LTO = YES_THIN;
 				PRODUCT_BUNDLE_IDENTIFIER = DP.CURDUITemplate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
