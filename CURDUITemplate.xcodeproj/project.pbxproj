@@ -19,6 +19,7 @@
 		6E0AD87D1FC5538600DD39F7 /* GoodsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AD87C1FC5538600DD39F7 /* GoodsCell.m */; };
 		6E0AD8801FC5539300DD39F7 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0AD87F1FC5539300DD39F7 /* CommentCell.m */; };
 		6E3ED6B01FC6735F00C27A2D /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */; };
+		6E502F531FC7C31C0075CE99 /* UIAlertController+Remind.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E502F521FC7C31C0075CE99 /* UIAlertController+Remind.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		6E0AD87F1FC5539300DD39F7 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		6E3ED6AE1FC6735F00C27A2D /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		6E502F511FC7C31C0075CE99 /* UIAlertController+Remind.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+Remind.h"; sourceTree = "<group>"; };
+		6E502F521FC7C31C0075CE99 /* UIAlertController+Remind.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+Remind.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,13 +120,16 @@
 				6E0AD8421FC5457B00DD39F7 /* AppDelegate.m */,
 				6E0AD8731FC54A3200DD39F7 /* ShoppingCartViewController.h */,
 				6E0AD8741FC54A3200DD39F7 /* ShoppingCartViewController.m */,
-				6E0AD8761FC552BB00DD39F7 /* CommentListViewController.h */,
-				6E0AD8771FC552BB00DD39F7 /* CommentListViewController.m */,
 				6E3ED6AE1FC6735F00C27A2D /* SearchResultViewController.h */,
 				6E3ED6AF1FC6735F00C27A2D /* SearchResultViewController.m */,
+				6E0AD8761FC552BB00DD39F7 /* CommentListViewController.h */,
+				6E0AD8771FC552BB00DD39F7 /* CommentListViewController.m */,
 				6E0AD8471FC5457B00DD39F7 /* Main.storyboard */,
 				6E0AD87A1FC5536500DD39F7 /* Cells */,
+				6E502F501FC7C10F0075CE99 /* Utilities */,
 				6E0AD8791FC5535A00DD39F7 /* Resources */,
+				6E0AD84F1FC5457B00DD39F7 /* Info.plist */,
+				6E0AD8501FC5457B00DD39F7 /* main.m */,
 			);
 			path = CURDUITemplate;
 			sourceTree = "<group>";
@@ -151,8 +157,6 @@
 			children = (
 				6E0AD84A1FC5457B00DD39F7 /* Assets.xcassets */,
 				6E0AD84C1FC5457B00DD39F7 /* LaunchScreen.storyboard */,
-				6E0AD84F1FC5457B00DD39F7 /* Info.plist */,
-				6E0AD8501FC5457B00DD39F7 /* main.m */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -166,6 +170,15 @@
 				6E0AD87F1FC5539300DD39F7 /* CommentCell.m */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		6E502F501FC7C10F0075CE99 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6E502F511FC7C31C0075CE99 /* UIAlertController+Remind.h */,
+				6E502F521FC7C31C0075CE99 /* UIAlertController+Remind.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E0AD87D1FC5538600DD39F7 /* GoodsCell.m in Sources */,
+				6E502F531FC7C31C0075CE99 /* UIAlertController+Remind.m in Sources */,
 				6E0AD8801FC5539300DD39F7 /* CommentCell.m in Sources */,
 				6E0AD8781FC552BB00DD39F7 /* CommentListViewController.m in Sources */,
 				6E0AD8751FC54A3200DD39F7 /* ShoppingCartViewController.m in Sources */,
@@ -471,7 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = YES_THIN;
@@ -486,7 +500,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/CURDUITemplate/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LLVM_LTO = YES_THIN;

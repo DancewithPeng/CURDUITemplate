@@ -10,4 +10,6 @@
 
 @interface CommentListViewController : UITableViewController
 
+@property (nonatomic, strong) id goods;
+
 @end

@@ -16,13 +16,7 @@
 @implementation SearchResultViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [super viewDidLoad];    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,9 +37,30 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsCell" forIndexPath:indexPath];
     
-    cell.titleLabel.text = @"结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 结果。。。 ";
+    [self.shoppingCartViewController setupCell:cell withData:self.dataSource[indexPath.row]];
     
     return cell;
 }
+
+#pragma mark - UITable view Delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self.delegate respondsToSelector:@selector(didSelectedGoods:)]) {
+//        [self.delegate didSelectedGoods:self.dataSource[indexPath.row]];
+        [self.delegate didSelectedGoods:nil];
+    }
+}
+
+
+#pragma mark - Setter
+
+- (void)setDataSource:(NSMutableArray *)dataSource {
+    if (_dataSource != dataSource)  {
+        _dataSource = dataSource;
+        
+        [self.tableView reloadData];
+    }
+}
+
 
 @end

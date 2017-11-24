@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 }
 
 #pragma mark - Event Handlers
@@ -39,6 +40,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.titleLabel.text = @"哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈 哈哈哈哈";
     cell.dateLabel.text = @"2017-11-22";
     return cell;

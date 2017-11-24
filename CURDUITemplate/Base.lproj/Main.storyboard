@@ -108,7 +108,6 @@
                                     <outlet property="numberLabel" destination="EwS-RA-knA" id="sPe-8l-zmW"/>
                                     <outlet property="pictureImageView" destination="6sc-FH-Eow" id="GTj-B0-3fT"/>
                                     <outlet property="titleLabel" destination="Kyg-ha-8yI" id="AeG-oq-Fti"/>
-                                    <segue destination="7vD-M2-Iez" kind="show" id="Ke2-rw-7G3"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -136,7 +135,7 @@
         <!--评论列表-->
         <scene sceneID="cfe-ZU-7wD">
             <objects>
-                <tableViewController id="7vD-M2-Iez" customClass="CommentListViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CommentListViewController" id="7vD-M2-Iez" customClass="CommentListViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5II-l0-tVf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

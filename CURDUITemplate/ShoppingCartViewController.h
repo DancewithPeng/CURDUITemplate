@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoodsCell.h"
 
 @interface ShoppingCartViewController : UITableViewController
+
+- (void)setupCell:(GoodsCell *)cell withData:(id)data;
 
 @end
