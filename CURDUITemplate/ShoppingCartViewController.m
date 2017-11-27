@@ -165,13 +165,8 @@
 
 - (NSInteger)validateGoodsCountForText:(NSString *)text {
     
-    if (text == nil) {
-        [UIAlertController remindMessage:@"请输入正确的商品数量" inViewController:self];
-        return -1;
-    }
-    
     NSInteger num = [text integerValue];
-    if (num >= 0) {
+    if (num >= 1) {
         return num;
     }
     
