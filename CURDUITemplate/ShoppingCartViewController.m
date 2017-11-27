@@ -100,6 +100,7 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CommentListViewController *commentListVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"CommentListViewController"];
+    commentListVC.goods = goods;
     [self.navigationController pushViewController:commentListVC animated:YES];
 }
 
@@ -126,27 +127,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GoodsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GoodsCell" forIndexPath:indexPath];
     cell.delegate = self;
-//    [self setupCell:cell withData:self.dataSource[indexPath.row]];
+    [self setupCell:cell withData:self.dataSource[indexPath.row]];
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        [self deleteGoods:self.dataSource[indexPath.row]];
+        [self deleteGoods:self.dataSource[indexPath.row]];
     }
 }
 
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self didSelectedGoods:nil];
+    [self didSelectedGoods:self.dataSource[indexPath.row]];
 }
 
 #pragma mark - Helper Methods
@@ -182,8 +183,6 @@
 - (void)updateSearchResults:(NSArray *)results {
     
 }
-
-#pragma mark - Segue
 
 
 #pragma mark - Getter
