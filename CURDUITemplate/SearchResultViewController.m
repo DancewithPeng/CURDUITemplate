@@ -31,7 +31,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -46,8 +46,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if ([self.delegate respondsToSelector:@selector(didSelectedGoods:)]) {
-//        [self.delegate didSelectedGoods:self.dataSource[indexPath.row]];
-        [self.delegate didSelectedGoods:nil];
+        [self.delegate didSelectedGoods:self.dataSource[indexPath.row]];
     }
 }
 
