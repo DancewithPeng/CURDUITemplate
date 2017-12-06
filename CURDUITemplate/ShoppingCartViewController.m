@@ -100,6 +100,7 @@
     
     UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     CommentListViewController *commentListVC = [mainStoryboard instantiateViewControllerWithIdentifier:@"CommentListViewController"];
+    commentListVC.goods = goods;
     [self.navigationController pushViewController:commentListVC animated:YES];
 }
 
@@ -146,7 +147,7 @@
 #pragma mark - UITableView Delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self didSelectedGoods:nil];
+    [self didSelectedGoods:self.dataSource[indexPath.row]];
 }
 
 #pragma mark - Helper Methods
@@ -164,13 +165,8 @@
 
 - (NSInteger)validateGoodsCountForText:(NSString *)text {
     
-    if (text == nil) {
-        [UIAlertController remindMessage:@"请输入正确的商品数量" inViewController:self];
-        return -1;
-    }
-    
     NSInteger num = [text integerValue];
-    if (num >= 0) {
+    if (num >= 1) {
         return num;
     }
     
@@ -182,8 +178,6 @@
 - (void)updateSearchResults:(NSArray *)results {
     
 }
-
-#pragma mark - Segue
 
 
 #pragma mark - Getter
